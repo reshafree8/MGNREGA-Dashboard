@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MGNREGA District Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="dashboard-header">
+  <h1>MGNREGA District Dashboard</h1>
+  <button onclick="window.location.href='index.html'" class="back-home-btn">
+    ⬅ Back to Home
+  </button>
+</header>
+
+  <!-- Controls Section (District Dropdown + Location Detection) -->
+  <section class="tocombine">
+    <!-- District Selection -->
+    <section class="controls">
+      <div class="control-box">
+        <label for="districtDropdown">Select District:</label>
+        <select id="districtDropdown">
+          <option value="">-- Select District --</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Location Detection -->
+    <section class="detection">
+      <div class="detect-box">
+        <button id="detectBtn" class="detect-btn">🔎 Detect My District</button>
+        <p class="detect-hint">Allow location access to auto-detect your district.</p>
+        <p id="detectedDistrict" class="detected-district"></p>
+      </div>
+    </section>
+  </section>
+
+  <!-- Chart Section -->
+  <section class="chart-container">
+    <h2>District Performance Overview</h2>
+    <h3 id="districtTitle">Select a district to view MGNREGA data</h3>
+
+    <!-- Graph Type Selection -->
+    <div class="chart-controls">
+      <label for="chartType">Select Graph Type:</label>
+      <select id="chartType">
+        <option value="bar">Bar Chart</option>
+        <option value="line">Line Chart</option>
+        <option value="pie">Pie Chart</option>
+        <option value="doughnut">Doughnut Chart</option>
+        <option value="radar">Radar Chart</option>
+        <option value="polarArea">Polar Area Chart</option>
+      </select>
+    </div>
+
+    <!-- Placeholder (Before Graph Loads) -->
+    <div id="chartPlaceholder" class="chart-placeholder">
+      <h3>📊 Select a District to View Performance</h3>
+      <p>Your district’s employment data will appear here once selected!</p>
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/2421/2421693.png"
+        alt="Select District"
+        width="120"
+      />
+    </div>
+
+    <!-- Chart Area -->
+    <canvas id="myChart" style="display: none;"></canvas>
+
+    <!-- Auto-Generated Summary for Local Users -->
+    <div
+      id="dataSummaryText"
+      style="
+        background: white;
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 10px;
+        font-size: 16px;
+        color: #334155;
+        line-height: 1.6;
+        text-align: center;
+      "
+    ></div>
+
+    <!-- Data Summary Box -->
+    <p id="dataSummary" class="data-summary">
+      Check how employment and expenditure trends have changed over the past months in your selected district.
+    </p>
+  </section>
+
+  <!-- Info Box -->
+  <p class="info-box">
+    🧑‍🌾 <b>What is a Personday?</b><br />
+    A <b>Personday</b> means <i>one person working for one full day</i> under the
+    MGNREGA scheme.<br />
+    For example, if 10 people work for 10 days, that equals
+    <b>100 persondays</b>.<br />
+    It helps measure how much total employment has been created in your district.
+  </p>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      Empowering citizens through data transparency ❤️ |
+      <b>MGNREGA Analytics Portal © 2025</b>
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

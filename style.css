@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #eaf2ff, #fefefe);
+  color: #222;
+  text-align: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ===== WELCOME PAGE ===== */
+.welcome-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-header {
+  background: linear-gradient(90deg, #0078D4, #00A8E8);
+  color: white;
+  padding: 25px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 120, 212, 0.3);
+}
+
+.welcome-content {
+  width: 70%;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+  margin-top: 40px;
+  line-height: 1.8;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 24px;
+  background: #0078D4;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #005ea0;
+}
+
+/* ===== DASHBOARD PAGE ===== */
+header {
+  background: linear-gradient(90deg, #0078D4, #00A8E8);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 120, 212, 0.3);
+  margin-bottom: 30px;
+}
+
+.controls {
+  background: white;
+  width: 30%;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+select {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.chart-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.chart-info {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+footer {
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+.chart-controls {
+  margin: 20px;
+}
+
+.chart-controls select {
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+canvas {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+  
+}
+
+canvas:hover {
+  transform: scale(1.02);
+}
+
+.data-summary {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #333;
+  background: #eef6ff;
+  padding: 15px;
+  border-radius: 10px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.05);
+}
+
+.info-box {
+  background: #e0f7fa;
+  border-left: 6px solid #0288d1;
+  padding: 12px 18px;
+  margin: 20px auto;
+  border-radius: 8px;
+  max-width: 700px;
+  color: #004d40;
+  font-size: 15px;
+  line-height: 1.6;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 2.5rem; */
+  margin: 10px auto;
+  flex-wrap: wrap; /* responsive stacking on small screens */
+}
+
+/* Each card box */
+.dropdown-box,
+.detect-box,
+.control-box{
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 320px;
+}
+
+/* Hover lift effect */
+.dropdown-box:hover,
+.detect-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 114, 255, 0.15);
+}
+
+/* Detect Button Styling */
+.detect-btn {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 114, 255, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .dropdown-box,
+  .detect-box {
+    width: 50%;
+    min-width: unset;
+  }
+}
+.detected-district {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0072ff;
+  text-shadow: 0 0 5px rgba(0, 114, 255, 0.2);
+  transition: opacity 0.3s ease;
+}
+
+.detection ,.tocombine{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin: 35px auto;
+  flex-wrap: wrap; /* responsive stacking on small screens */
+}
+/*  Placeholder styling for empty chart */
+.chart-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #333;
+  background: #f8fbff;
+  border: 2px dashed #a0c4ff;
+  border-radius: 15px;
+  margin-top: 20px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+  transition: opacity 0.5s ease;
+}
+
+.chart-placeholder img {
+  margin-top: 15px;
+  opacity: 0.9;
+  width: 100px;
+}
+/*  Fixed Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #2d9cdb, #00a8e8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav-logo {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-right {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #e0f7fa;
+  transform: translateY(-2px);
+}
+
+.nav-link:hover {
+  color: #fff;
+  text-shadow: 0 0 6px rgba(255,255,255,0.5);
+}
+
+.nav-link.active {
+  border-bottom: 2px solid #fff;
+}
+
+/* So content doesn’t hide behind navbar */
+body {
+  padding-top: 80px;
+}
+
+/* ====== Header Styling ====== */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #0284c7, #0ea5e9);
+  padding: 18px 40px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* ====== Back Button Styling ====== */
+.back-home-btn {
+  background-color: #f8fafc;
+  color: #0284c7;
+  border: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.back-home-btn:hover {
+  background-color: #0284c7;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}

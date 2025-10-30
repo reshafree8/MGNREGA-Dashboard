@@ -1,0 +1,4 @@
+# MGNREGA District Dashboard - Dependencies
+# This project is a static web app using HTML, CSS, JS, and Chart.js
+
+chart.js==4.4.1  # version reference for Chart.js (via CDN)
